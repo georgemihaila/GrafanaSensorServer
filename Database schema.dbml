@@ -1,0 +1,13 @@
+Table Sensors{
+  Name varchar [not null, unique, pk]
+  State varchar
+}
+
+Table Values { 
+  ID int [pk, increment]
+  Sensor varchar
+  Value float
+  ReadingTime datetime
+}
+
+Ref: Values.Sensor > Sensors.Name
