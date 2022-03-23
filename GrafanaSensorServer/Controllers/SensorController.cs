@@ -20,7 +20,6 @@ namespace GrafanaSensorServer.Controllers
             _context = context;
         }
 
-        [HttpPost]
         [HttpGet]
         [Route("SetState")]
         public IActionResult SetState(string sensor, string state)
@@ -43,7 +42,6 @@ namespace GrafanaSensorServer.Controllers
             return Ok();
         }
 
-        [HttpPost]
         [HttpGet]
         [Route("AddReading")]
         public IActionResult AddReading(string sensor, float value)
