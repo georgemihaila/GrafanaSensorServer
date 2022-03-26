@@ -14,6 +14,7 @@ namespace GrafanaSensorServer.Infra.Database
 
         public string Name { get; set; }
         public string State { get; set; }
+        public DateTime? StateChangeTime { get; set; }
 
         public virtual ICollection<Value> Values { get; set; }
     }

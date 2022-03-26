@@ -29,13 +29,15 @@ namespace GrafanaSensorServer.Controllers
                 _context.Sensors.Add(new Sensor()
                 {
                     Name = sensor,
-                    State = state
+                    State = state,
+                    StateChangeTime = DateTime.Now
                 });
             }
             else
             {
                 var x = _context.Sensors.First(x => x.Name == sensor);
                 x.State = state;
+                x.StateChangeTime = DateTime.Now;
                 _context.Update(x);
             }
             _context.SaveChanges();
