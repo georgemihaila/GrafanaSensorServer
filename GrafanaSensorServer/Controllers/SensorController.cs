@@ -63,6 +63,8 @@ namespace GrafanaSensorServer.Controllers
                 Sensor = targetSensor.Name,
                 Value1 = value
             });
+            targetSensor.StateChangeTime = DateTime.Now;
+            _context.Sensors.Update(targetSensor);
             _context.SaveChanges();
             return Ok();
         }
